@@ -9,7 +9,7 @@ import { Provider } from 'react-redux'
 // 	RainbowKitProvider, darkTheme 
 // } from '@rainbow-me/rainbowkit';
 import { configureChains, createClient, WagmiConfig } from 'wagmi';
-import { mainnet, polygon, optimism, arbitrum, filecoinHyperspace } from 'wagmi/chains';
+import { mainnet, polygon, optimism, arbitrum, filecoinHyperspace, polygonMumbai } from 'wagmi/chains';
 import { alchemyProvider } from 'wagmi/providers/alchemy';
 import { publicProvider } from 'wagmi/providers/public';
 import { ConnectKitProvider,  getDefaultClient } from "connectkit";
@@ -18,7 +18,7 @@ import { ConnectKitProvider,  getDefaultClient } from "connectkit";
 function MyApp({ Component, pageProps }: AppProps) {
 
 	const { chains, provider } = configureChains(
-		[filecoinHyperspace],
+		[filecoinHyperspace,polygonMumbai],
 		[
 			alchemyProvider({ apiKey: process.env.ALCHEMY_ID }),
 			publicProvider()
