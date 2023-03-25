@@ -27,7 +27,7 @@ function MyApp({ Component, pageProps }: AppProps) {
 
 	const { connectors } = 
 		getDefaultClient({
-			appName: "Collabs",
+			appName: "Unite3",
 			chains,
 		  });
 
