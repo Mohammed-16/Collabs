@@ -9,9 +9,8 @@ const Reward = () => {
 			<div className='bgForm'>
 				<Navbar />
 				<div className='grid grid-cols-10  '>
-					
 					<div className='border-r min-h-[91vh] border-[#8BD1D2] col-span-6 '>
-						<Preview />
+						<Preview/>
 					</div>
 					<div className=' col-span-4'>
 						<Form />
