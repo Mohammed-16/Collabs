@@ -3,7 +3,7 @@ pragma solidity ^0.8.0;
 
 import "@openzeppelin/contracts/token/ERC721/ERC721.sol";
 
-contract Collabs is ERC721 {
+contract ImageNFT is ERC721 {
     uint256 private _tokenIdTracker;
     mapping(uint256 => string) private _tokenURIs;
 
@@ -25,10 +25,5 @@ contract Collabs is ERC721 {
     function tokenURI(uint256 tokenId) public view virtual override returns (string memory) {
         require(_exists(tokenId), "ERC721Metadata: URI query for nonexistent token");
         return _tokenURIs[tokenId];
-    }
-
-    function transferNFT(address _to, uint256 _tokenId) public {
-        require(ownerOf(_tokenId) == msg.sender, "ImageNFT: You do not own this NFT.");
-        safeTransferFrom(msg.sender, _to, _tokenId);
     }
 }
