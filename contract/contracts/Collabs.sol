@@ -27,3 +27,15 @@ contract ImageNFT is ERC721 {
         return _tokenURIs[tokenId];
     }
 }
+contract ImageNFTTransfer {
+    ImageNFT private _imageNFT;
+
+    constructor(address imageNFTContractAddress) {
+        _imageNFT = ImageNFT(imageNFTContractAddress);
+    }
+
+    function transferNFT(address to, uint256 tokenId) public {
+        require(_imageNFT.ownerOf(tokenId) == msg.sender, "ImageNFTTransfer: You do not own this NFT.");
+        _imageNFT.safeTransferFrom(msg.sender, to, tokenId);
+    }
+}
